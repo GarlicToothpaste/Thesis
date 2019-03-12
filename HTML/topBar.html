@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link rel="stylesheet" type="text/css" href="../CSS/topBarStyle.css">
+	<title>TopBar</title>
+</head>
+<body>
+	<header id = "main-header">
+		<h2 id="header-title">{{Program Name}}</h2>
+
+		<div class = "dropdown-menus">
+			
+			<ul class = "algorithm-menu">
+				<li><class = "algorithm-menu-trigger" data-trigger = "dropdown" href = "#"> Apriori Algorithm
+					<ul class = "algorithm-submenu submenu">
+						<li><a href="#">Apriori Algorithm</a></li>
+						<li><a href="#">K-Means</a></li>
+						<li><a href="#">Collaborative Filtering</a></li>
+					</ul>
+				</li>
+			</ul>
+
+			<ul class = "profile-menu">
+				<li><class = "profile-menu-trigger" data-trigger="dropdown" href = "#">Logged in as {{Username}}
+					<ul class = "profile-submenu submenu">
+							 <li><a href = "#">My account </a></li>
+							 <li><a href = "#">Profile </a></li>
+							 <li><a href = "#">Settings</a></li>
+							 <li><a href="#">Log Out</a></li>
+					</ul>
+				</li>
+			</ul>
+
+		</div>
+	</header>
+
+	<script src="https://code.jquery.com/jquery-3.3.1.min.js" ></script>
+	<script src= "../JS/topBarJS.js"></script>
+</body>
+</html>

@@ -1,0 +1,51 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto:400,500');
+
+#login{
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	text-align: center;
+/*	min-height: 100vh;*/
+}
+
+#login h2{
+	font-family: "Roboto", sans-serif;
+	font-weight: 400 !important;
+}
+
+#username{
+	display: inline-block;
+	margin: 10px;
+}
+
+#username-input{
+	padding: 12px 20px;
+	border: 1px solid #ccc;
+	border-radius: 4px;
+	box-sizing: border-box;
+}
+
+#password{
+	display: inline-block;
+	margin: 10px
+}
+
+#password-input{
+	padding: 12px 20px;
+	border: 1px solid #ccc;
+	border-radius: 4px;
+	box-sizing: border-box;
+}
+
+#submit{
+	margin: 10px
+
+}
+
+#submit-button{
+	border-radius: 4px;
+	box-sizing: border-box;
+	width: 270px;
+	height: 43px;
+}

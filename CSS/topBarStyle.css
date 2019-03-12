@@ -1,0 +1,77 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto:400,500');
+
+#header-title{
+	font-family: 'Roboto' , sans-serif;
+	display: inline-block;
+	font-weight: 400;
+	margin-left: 20px;
+
+}
+
+#main-header {
+
+	border-bottom: 2px solid black;
+	width: 100%;
+/*	border-width: 2px;
+	margin-bottom: 50px;*/
+	position: fixed;
+	background-color: rgba(255,255,255,.9);
+	top: 0px;
+	right: 0px;
+	margin: 0px;
+}
+.dropdown-menus{
+	display: inline-block;
+	float: right;
+}
+.algorithm-menu{
+/*	display: inline-block;*/
+	list-style: none;
+	float: left;
+	margin-top: 30px;
+	margin-right: 20px;
+}
+.profile-menu {
+/*	display: inline-block;*/
+	list-style: none;
+	float: right;
+	margin-top: 30px;
+	margin-right: 20px;
+}
+
+[data-trigger = "dropdown"]{
+	padding-bottom: 30px;
+	font-family: "Roboto" , sans-serif;
+	font-weight: 400;
+}
+
+.submenu {
+	list-style: none;
+	padding: 0px;
+	border: 1px solid #aaa;
+	background: #fff;
+	margin-top: 30px;
+	box-shadow: 2px 2px 15px rgba(0,0,0,.3);
+	width: 300px;
+	position: absolute;
+	right: 10px;
+	display: none;
+}
+
+.submenu.active{
+	display: block;
+}
+
+.submenu a{ 
+	text-decoration: none;
+	padding: 10px 10px;
+	display: block;
+	color: #333;
+	text-shadow: none;
+	font-weight: 600;
+	letter-spacing: 0px;
+}
+
+.submenu a:hover{
+	background: #eee;
+}
