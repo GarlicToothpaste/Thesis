@@ -53,13 +53,21 @@
 	margin-top: 30px;
 	box-shadow: 2px 2px 15px rgba(0,0,0,.3);
 	width: 300px;
-	position: absolute;
-	right: 10px;
+/*	position: absolute;*/
+/*	right: 10px;*/
 	display: none;
 }
-
+.profile-submenu{
+	position: absolute;
+	float: right;
+}
+.algorithm-submenu{
+	position: absolute;
+	float: left;
+}
 .submenu.active{
 	display: block;
+
 }
 
 .submenu a{ 
