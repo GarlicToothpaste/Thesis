@@ -14,7 +14,10 @@
 	width: 100%;
 /*	border-width: 2px;
 	margin-bottom: 50px;*/
-	position: fixed;
+
+/* ADD LATER */
+/*	position: fixed;*/
+
 	background-color: rgba(255,255,255,.9);
 	top: 0px;
 	right: 0px;
@@ -52,7 +55,7 @@
 	background: #fff;
 	margin-top: 30px;
 	box-shadow: 2px 2px 15px rgba(0,0,0,.3);
-	width: 300px;
+	width: 250px;
 /*	position: absolute;*/
 /*	right: 10px;*/
 	display: none;
@@ -67,9 +70,12 @@
 }
 .submenu.active{
 	display: block;
-
 }
-
+/*.submenu ul{
+	left:auto;
+    right:0;
+    margin-right:-10px;
+}*/
 .submenu a{ 
 	text-decoration: none;
 	padding: 10px 10px;
@@ -82,4 +88,115 @@
 
 .submenu a:hover{
 	background: #eee;
+
+}
+
+
+
+
+
+#upload-menu{
+	margin-top: 20px;
+	margin-left: 20px;
+	display: block;
+}
+
+#upload-button{
+    border: none;
+    padding: 5px 20px;
+    text-align: center;
+    font-size: 12px;
+    border-radius: 4px;
+  	background: #D3D3D3;
+	color: #696969;
+}
+.left-menu{
+	float: left;
+	padding-left: 20px;
+	width: 48%;
+}
+#left-menu-header{
+	font-family: 'Roboto' , sans-serif;
+	font-weight: 400;
+}
+
+.filter-subheader{
+	font-family: 'Roboto' , sans-serif;
+	font-weight: 400;
+	font-size: 20px;
+}
+
+.dropdown-button{
+	font-family: 'Roboto' , sans-serif;
+	font-size: 16px
+	border: none;
+	padding: 5px 20px;
+	text-align: center;
+	font-size: 12px;
+	border-radius: 4px;
+	background: #D3D3D3;
+	color: #696969;
+	box-shadow: none;
+}
+.dropdown{
+	font-family: 'Roboto' , sans-serif;
+	font-size: 16px;
+	list-style: none;
+	padding: 0px;
+	border: 1px solid #aaa;
+	background: #fff;
+	margin-top: 0px;
+	box-shadow: 2px 2px 15px rgba(0,0,0,.3);
+	width: 250px;
+	position: absolute;
+/*	right: 10px;*/
+	display: none;
+	background: #D3D3D3;
+}
+.dropdown a{
+	width: 250px;
+	text-decoration: none;
+	padding-top: 3px;
+	padding-bottom: 3px;
+	color: #696969;
+
+}
+.dropdown.active{
+	display: block;
+}
+
+.additional-div{
+	margin-top: 30px;
+}
+.additional-subheader{
+	font-family: 'Roboto' , sans-serif;
+	font-weight: 400;
+	font-size: 20px;
+}
+
+.submit-div{
+	margin-top: 30px;
+	margin-right: 30px;
+	float: right;
+}
+.submit-button{
+	float: right;
+}
+
+
+
+
+.right-menu{
+	float: right;
+	width: 50%;
+}
+.right-menu-header{
+	font-family: 'Roboto' , sans-serif;
+	font-weight: 400;
+}
+.output-box{
+	width: 90%;
+	height: 500px;
+	border:2px solid black;
+	border-radius: 10px;
 }
