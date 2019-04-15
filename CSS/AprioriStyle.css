@@ -23,6 +23,11 @@
 	right: 0px;
 	margin: 0px;
 }
+
+#body-div{
+	margin-top: 24px;
+}
+
 .dropdown-menus{
 	display: inline-block;
 	float: right;
@@ -97,23 +102,16 @@
 
 #upload-menu{
 	margin-top: 20px;
-	margin-left: 20px;
+	
 	display: block;
 }
 
 #upload-button{
     border: none;
-    padding: 5px 20px;
-    text-align: center;
-    font-size: 12px;
-    border-radius: 4px;
-  	background: #D3D3D3;
-	color: #696969;
+
 }
 .left-menu{
-	float: left;
-	padding-left: 20px;
-	width: 48%;
+	margin-left: 20px;
 }
 #left-menu-header{
 	font-family: 'Roboto' , sans-serif;
@@ -126,7 +124,7 @@
 	font-size: 20px;
 }
 
-.dropdown-button{
+/*.dropdown-button{
 	font-family: 'Roboto' , sans-serif;
 	font-size: 16px
 	border: none;
@@ -137,8 +135,8 @@
 	background: #D3D3D3;
 	color: #696969;
 	box-shadow: none;
-}
-.dropdown{
+}*/
+/*.dropdown{
 	font-family: 'Roboto' , sans-serif;
 	font-size: 16px;
 	list-style: none;
@@ -149,11 +147,9 @@
 	box-shadow: 2px 2px 15px rgba(0,0,0,.3);
 	width: 250px;
 	position: absolute;
-/*	right: 10px;*/
-	display: none;
-	background: #D3D3D3;
-}
-.dropdown a{
+/*	right: 10px;
+}*/
+/*.dropdown a{
 	width: 250px;
 	text-decoration: none;
 	padding-top: 3px;
@@ -163,8 +159,7 @@
 }
 .dropdown.active{
 	display: block;
-}
-
+}*/
 .additional-div{
 	margin-top: 30px;
 }
@@ -187,7 +182,7 @@
 
 
 .right-menu{
-	float: right;
+
 	width: 50%;
 }
 .right-menu-header{
