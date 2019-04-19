@@ -4,6 +4,7 @@
 	<title>My Profile</title>
 
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+<link rel="stylesheet" type="text/css" href="../CSS/ProfileStyle.css">
 </head>
 <body>
 
@@ -42,10 +43,26 @@
 
 	<div class = "container-fluid">
 		<div class="row">
-			<div class="col-md-6 offset-sm-3 text-center">
-				<h1>USERNAME</h1>
-				<h1>CREATION DATE</h1>
-				<h1>CHANGE PASS</h1>
+			<div class="col-md-4 offset-sm-4 bg-light" id = "div-background">
+				<h2>Account Information</h2>
+				<p> {{Username}}</p>
+				<p>Creation Date: {{DATE}}</p>
+				<p>Email: {{EMAIL}}</p>
+				<h2>Change Password</h2>
+				<div class= "form-group">
+					<label for="input-current-password">Input Current Password</label>
+					<input id = "input-current-password"class="form-control" type="text" placeholder="Current Password">
+				</div>
+
+				<div class="form-group">
+					<label for="input-new-password">Input New Password</label>
+					<input id = "input-new-password" class="form-control" type="text" placeholder="New Password">
+				</div>
+
+				<div  id = "buttons">
+					<button type="button" class="btn btn-secondary">Back</button>
+					<button type="button" class="btn btn-success">Change Password</button>
+				</div>
 			</div>
 
 		</div>
