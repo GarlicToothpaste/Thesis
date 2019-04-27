@@ -1,0 +1,14 @@
+#div-background{
+	margin-top: 64px;
+	border-radius: 25px;
+	padding-top: 32px;
+	padding-bottom: 32px;
+
+}
+#div-background .p{
+	margin-left: 40px;
+}
+
+#buttons{
+	float: right;
+}
