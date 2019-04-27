@@ -4,6 +4,10 @@ const bodyParser = require('body-parser')
 const router = express.Router();
 const app = express();
 
+//Pthon related
+const spawn = require("child_process").spawn;
+//const pythonProcess = spawn('python',["path/to/script.py", arg1, arg2, ...]);
+
 app.use(session({secret: 'ssshhhhh', saveUninitialized: true, resave: true}));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: true}));
@@ -20,7 +24,7 @@ router.get('/', (req, res) => {
 	if(sess.username) {
 		res.redirect('/admin');
 	}
-	res.sendFile(__dirname + '/views/HTML/Register.html');
+	res.sendFile(__dirname + '/views/HTML/Apriori.html');
 });
 
 router.post('/login', (req, res) => {
@@ -51,10 +55,36 @@ router.get('/logout', (req, res) => {
 	});
 });
 
+// Register.html functions
+//FUNCTION FOR REGISTER IN Register.html
 router.post("/register", (req, res) => {
 	console.log(req.body);
-})
+});
 
+
+//Apriori.html functions
+//FUNCTION FOR APRIORI ALGORITHM
+
+//TEST FUNCTION FOR IMPORTING THE PYTHON SCRIPT
+router.post("/aprioriAlgo" , (req, res) => {
+	const test = spawn("python", ["Python/python.py" , "a", "b", "c"])
+	test.stdout.on("data", function(data){
+		console.log(data.toString());
+		res.write(data);
+		res.end("end");
+	});
+	//console.log(req.body);
+});
+
+
+// router.post("aprioriAlgo" , (req, res) =>{
+// 	const algorithm = spawn("python", [Python/python.py, ])
+// 	test.stdout.on("data" , function(data){
+// 		console.long(data.toString());
+// 		res.write(data)
+// 		res.end();
+// 	});
+// });
 
 app.use('/', router);
 

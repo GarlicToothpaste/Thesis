@@ -3,39 +3,28 @@
 <head>
 	<link rel="stylesheet" type="text/css" href="../CSS/AprioriStyle.css">
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-	
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+
 	<title>Apriori Algorithm</title>
+
+	<script>
+	$(document).ready(function(){
+		var maindata , skudata;
+
+		$("#submit").click(function(){
+			maindata = $("#main-data-button").val();
+			skudata = $("#sku-data-button").val();
+			console.log(maindata);
+			$.post("/aprioriAlgo", {maindata: maindata , skudata:skudata}, function(data){
+
+
+			});
+		});
+	});
+
+	</script>
 </head>
 <body>
-<!-- 	<header id = "main-header">
-		<h2 id="header-title">{{Program Name}}</h2>
-
-		<div class = "dropdown-menus">
-			
-			<ul class = "algorithm-menu">
-				<li><class = "algorithm-menu-trigger" data-trigger = "dropdown" href = "#"> Apriori Algorithm
-					<ul class = "algorithm-submenu submenu">
-						<li><a href="#">Apriori Algorithm</a></li>
-						<li><a href="#">K-Means</a></li>
-						<li><a href="#">Collaborative Filtering</a></li>
-					</ul>
-				</li>
-			</ul>
-
-			<ul class = "profile-menu">
-				<li><class = "profile-menu-trigger" data-trigger="dropdown" href = "#">Logged in as {{Username}}
-					<ul class = "profile-submenu submenu">
-							 <li><a href = "#">My account </a></li>
-							 <li><a href = "#">Profile </a></li>
-							 <li><a href = "#">Settings</a></li>
-							 <li><a href="#">Log Out</a></li>
-					</ul>
-				</li>
-			</ul>
-
-		</div>
-	</header> -->
-
 
 	<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
 	  	<a class="navbar-brand" href="#">{{PROGRAM NAME}}</a>
@@ -75,19 +64,19 @@
 			<div class= "col-sm left-menu">
 <!-- 				FOR MAIN DATA -->
 				<div class="form-group upload-menu">
-		    		<input type="file" class="form-control-file" id="upload-button">
+		    		<input type="file" class="form-control-file" id="main-data-button">
 		  		</div>
 <!-- 		  		FOR SKU DATA -->
 		  		<div class="form-group upload-menu">
-		    		<input type="file" class="form-control-file" id="upload-button">
+		    		<input type="file" class="form-control-file" id="sku-data-button">
 		  		</div>
-				
+
 				<h1 id = "left-menu-header">Configure</h1>
 
 				<div>
 					<div class = filter-div>
 						<h2 class="filter-subheader">Filter By Subcategory</h2>
-						<div class = "body-dropdown-menu" href = "#"> 
+						<div class = "body-dropdown-menu" href = "#">
 							<select>
 								<option value="None">None</option>
 								<option value="Skin Care">Skin Care</option>
@@ -117,20 +106,20 @@
 						</div>
 
 					</div>
-					
+
 				</div>
 
 				<div class = "submit-div">
-					<button type="button" class="btn btn-dark submit-button">Execute</button>
+					<button type="button" id="submit" class="btn btn-dark submit-button">Execute</button>
 				</div>
 
 			</div>
 
 			<div class = "col-sm">
 				<h1 class="right-menu-header">Output</h1>
-				
+
 				<div class = "output-box">
-				
+
 				</div>
 
 			</div>
