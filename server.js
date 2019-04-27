@@ -3,6 +3,7 @@ const session = require('express-session')
 const bodyParser = require('body-parser')
 const router = express.Router();
 const app = express();
+const formidable = require('formidable')
 
 //Pthon related
 const spawn = require("child_process").spawn;
@@ -65,26 +66,50 @@ router.post("/register", (req, res) => {
 //Apriori.html functions
 //FUNCTION FOR APRIORI ALGORITHM
 
-//TEST FUNCTION FOR IMPORTING THE PYTHON SCRIPT
+// TEST FUNCTION FOR IMPORTING THE PYTHON SCRIPT
+// router.post("/aprioriAlgo" , (req, res) => {
+// 	const test = spawn("python", ["Python/python.py" , "a", "b", "c"])
+// 	test.stdout.on("data", function(data){
+// 		console.log(data.toString());
+// 		res.write(data);
+// 		res.end("end");
+// 	});
+// 	//console.log(req.body);
+// });
+
 router.post("/aprioriAlgo" , (req, res) => {
-	const test = spawn("python", ["Python/python.py" , "a", "b", "c"])
+	var output = "";
+	console.log(req.body)
+	const test = spawn("python", ["Python/apriori.py" ])
 	test.stdout.on("data", function(data){
 		console.log(data.toString());
-		res.write(data);
-		res.end("end");
+		res.write(data , () => {
+			res.end();
+		});
 	});
-	//console.log(req.body);
+	//console.log(output);
+	console.log("reached here")
+	// res.end("end");
 });
 
 
-// router.post("aprioriAlgo" , (req, res) =>{
-// 	const algorithm = spawn("python", [Python/python.py, ])
-// 	test.stdout.on("data" , function(data){
-// 		console.long(data.toString());
-// 		res.write(data)
-// 		res.end();
+// router.post("/test", function(req, res){
+// 	var form = new formidable.IncomingForm();
+// 	files =[]
+//
+// 	fields = []
+// 	form.on("field", function(field,value){
+// 		fields.push([field, value]);
 // 	});
+//
+// 	form.on("file", function(field,file){
+// 		console.log(file.name);
+// 		files.push([field,file]);
+// 	})
+// 	form.parse(req)
 // });
+
+
 
 app.use('/', router);
 

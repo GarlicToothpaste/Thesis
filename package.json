@@ -20,6 +20,7 @@
   "homepage": "https://github.com/GarlicToothpaste/Thesis#readme",
   "dependencies": {
     "body-parser": "^1.18.3",
+    "compression": "^1.6.0",
     "express": "^4.16.4",
     "express-session": "^1.16.1",
     "formidable": "^1.2.1"
