@@ -4,7 +4,28 @@
 	<title>Admin</title>
 
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-<link rel="stylesheet" type="text/css" href="../CSS/ProfileStyle.css">
+	<link rel="stylesheet" type="text/css" href="../CSS/ProfileStyle.css">
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+	<script>
+	$(document).ready(function(){
+		var username, pass, confirmpass, email, role
+		$("#submit").click(function(){
+			username = $("#input-username").val();
+			password = $("#input-password").val();
+			confirmpass = $("#confirm-password").val();
+			email = $("#input-email").val();
+			role = $("#role").val();
+			if(password === confirmpass){
+				$.post("/register" , {username:username, password:password , email:email , role:role}, function(data){
+					});
+				}
+			else{
+				alert("Username and Password does not match");
+			}
+			});
+		});
+	</script>
+
 </head>
 <body>
 
@@ -67,7 +88,7 @@
 
 				 <div class="form-group">
 				 	<label for="Role">Role</label>
-					<select class="form-control" id="Role">
+					<select class="form-control" id="role">
 				    	<option>User</option>
 				    	<option>Administrator</option>
 				    </select>
@@ -75,7 +96,7 @@
 
 				<div  id = "buttons">
 					<button type="button" class="btn btn-secondary">Back</button>
-					<button type="button" class="btn btn-success">Register User</button>
+					<button id= "submit" type="submit" class="btn btn-success">Register User</button>
 				</div>
 
 

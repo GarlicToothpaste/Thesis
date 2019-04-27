@@ -20,7 +20,7 @@ router.get('/', (req, res) => {
 	if(sess.username) {
 		res.redirect('/admin');
 	}
-	res.sendFile(__dirname + '/views/HTML/login.html');
+	res.sendFile(__dirname + '/views/HTML/Register.html');
 });
 
 router.post('/login', (req, res) => {
@@ -50,6 +50,11 @@ router.get('/logout', (req, res) => {
 		res.redirect('/');
 	});
 });
+
+router.post("/register", (req, res) => {
+	console.log(req.body);
+})
+
 
 app.use('/', router);
 
