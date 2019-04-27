@@ -3,6 +3,18 @@ const session = require('express-session')
 const bodyParser = require('body-parser')
 const router = express.Router();
 const app = express();
+const mongoose = require('mongoose')
+
+mongoose.Promise = global.Promise;
+mongoose.connect('mongodb://localhost:27017/accounts', {useNewUrlParser: true});
+
+var userSchema = new mongoose.Schema({
+	username: String,
+	password: String,
+	email: String,
+	role: String
+});
+var User = mongoose.model('User', userSchema);
 
 //Pthon related
 const spawn = require("child_process").spawn;
@@ -24,7 +36,7 @@ router.get('/', (req, res) => {
 	if(sess.username) {
 		res.redirect('/admin');
 	}
-	res.sendFile(__dirname + '/views/HTML/Apriori.html');
+	res.sendFile(__dirname + '/views/HTML/Register.html');
 });
 
 router.post('/login', (req, res) => {
@@ -58,7 +70,29 @@ router.get('/logout', (req, res) => {
 // Register.html functions
 //FUNCTION FOR REGISTER IN Register.html
 router.post("/register", (req, res) => {
-	console.log(req.body);
+	User.findOne({username: req.query.username}, function(err, user) {
+		if(err) {console.log(err);}
+		var message;
+		if(user) {
+			message = "User already exists";
+			console.log(message);
+			return false;
+		}
+		else {
+			var user = new User({
+				username: req.body.username,
+				password: req.body.password,
+				email: req.body.email,
+				role: req.body.role
+			});
+			console.log("Successfully created user");
+			user.save(function (err) {
+				if(err) {console.log(err);}
+				alert("User Created");
+				res.sendFile(__dirname + '/views/HTML/ViewUsers.html');
+			})
+		}
+	});
 });
 
 

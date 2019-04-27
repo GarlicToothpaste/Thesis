@@ -18,11 +18,12 @@
 			email = $("#input-email").val();
 			role = $("#role").val();
 			if(password === confirmpass){
-				$.post("/register" , {username:username, password:password , email:email , role:role}, function(data){
-					});
-				}
+				$post("/register", {username:username, password:password, email:email, role:role}, function(data) {
+						window.location.href = "/admin";
+				});
+			}
 			else{
-				alert("Username and Password does not match");
+				alert("Passwords do not match");
 			}
 			});
 		});
@@ -75,12 +76,12 @@
 
 				<div class="form-group">
 					<label for="input-password">Input Password</label>
-					<input id = "input-password" class="form-control" type="text" placeholder="Password">
+					<input id = "input-password" class="form-control" type="password" placeholder="Password">
 				</div>
 
 				<div class="form-group">
 					<label for="confirm-password">Confirm Password</label>
-					<input id = "confirm-password" class="form-control" type="text" placeholder="Confirm Password">
+					<input id = "confirm-password" class="form-control" type="password" placeholder="Confirm Password">
 				</div>
 
 				<div class="form-group">
